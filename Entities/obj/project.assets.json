@@ -543,11 +543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Entities\\Entities.csproj",
+      "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Entities\\Entities.csproj",
       "packagesPath": "C:\\Users\\Kanan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Entities\\obj\\",
+      "outputPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -567,8 +567,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Core\\Core.csproj"
+            "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Core\\Core.csproj"
             }
           }
         }

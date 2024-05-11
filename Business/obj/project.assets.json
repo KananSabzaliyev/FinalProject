@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Business\\Business.csproj",
+      "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Business\\Business.csproj",
       "packagesPath": "C:\\Users\\Kanan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Business\\obj\\",
+      "outputPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

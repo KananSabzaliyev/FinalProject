@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\FinalProject.MVC(Web).csproj",
+      "projectUniqueName": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\FinalProject.MVC(Web).csproj",
       "projectName": "FinalProject.MVC(Web)",
-      "projectPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\FinalProject.MVC(Web).csproj",
+      "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\FinalProject.MVC(Web).csproj",
       "packagesPath": "C:\\Users\\Kanan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\obj\\",
+      "outputPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\FinalProject.MVC(Web)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

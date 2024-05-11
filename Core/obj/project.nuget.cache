@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "75s6/nRjqkTrta3egUWhhUHhfx/t3RGejUh3e8T/r4a3tt74Mb0JudNGi8rg/m0rmiMwh3/Lm96iKxr5h9fxLg==",
+  "dgSpecHash": "QtS5JJiYccUfhfdVL+nAeHhl9im+e7PcpjN0o1DfrNJyB8MFfwCpIat7bF61STkvjR6zYZjQR+Uu6eMNwt3zGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kanan\\source\\repos\\FinalProjectCodelandia\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kanan\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.18\\microsoft.entityframeworkcore.7.0.18.nupkg.sha512",
     "C:\\Users\\Kanan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.18\\microsoft.entityframeworkcore.abstractions.7.0.18.nupkg.sha512",
