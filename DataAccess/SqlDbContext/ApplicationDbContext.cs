@@ -13,7 +13,7 @@ namespace DataAccess.SqlDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source = Localhost; Initial Catalog = CarDb; Integrated Security = true; Encrypte = false;");
+            optionsBuilder.UseSqlServer("Data Source = Localhost; Initial Catalog = CarDb; Integrated Security = true;Trust Server Certificate = true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

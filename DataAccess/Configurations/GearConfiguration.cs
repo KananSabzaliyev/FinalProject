@@ -17,7 +17,7 @@ namespace DataAccess.Configurations
             builder.ToTable("Gears");
             builder.Property(x => x.Id)
                 .UseIdentityColumn(seed: DefaultConstantValue.DEFAULT_PRIMARY_KEY_INCREMENT_VALUE, increment: 1);
-            builder.Property(x => x.Name)
+            builder.Property(x => x.GearName)
                 .HasMaxLength(50);
         }
     }

@@ -8,7 +8,7 @@ namespace Entities.Concrete.Models
         {
             Cars = new HashSet<Car>();
         }
-        public string Name { get; set; }
+        public string GearName { get; set; }
         public ICollection<Car> Cars { get; set; }
     }
 }

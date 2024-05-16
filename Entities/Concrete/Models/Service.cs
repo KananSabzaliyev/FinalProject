@@ -4,8 +4,8 @@ namespace Entities.Concrete.Models
 {
     public class Service:BaseEntity
     {
-        public string IconName { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string ServiceIconName { get; set; }
+        public string ServiceTitle { get; set; }
+        public string ServiceDescription { get; set; }
     }
 }

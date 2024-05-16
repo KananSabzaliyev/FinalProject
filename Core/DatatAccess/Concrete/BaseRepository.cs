@@ -1,17 +1,13 @@
 ﻿using Core.DatatAccess.Abstract;
 using Core.Entites;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Core.DatatAccess.Concrete
 {
     public class BaseRepository<TEntity, TContext> : IBaseRepository<TEntity>
         where TEntity : BaseEntity, new()
-        where TContext : DbContext,new()
+        where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
         {
@@ -33,7 +29,7 @@ namespace Core.DatatAccess.Concrete
 
                 context.SaveChanges();
             }
-            
+
         }
         public void Delete(TEntity entity)
         {
@@ -46,13 +42,7 @@ namespace Core.DatatAccess.Concrete
             }
         }
 
-        public List<TEntity> GetAll()
-        {
-            using (TContext context = new TContext())
-            {
-                return context.Set<TEntity>().ToList();
-            } 
-        }
+
 
         public TEntity GetById(int id)
         {
@@ -62,5 +52,19 @@ namespace Core.DatatAccess.Concrete
             }
         }
 
+        public List<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter = null)
+        {
+            using (TContext context = new TContext())
+            {
+                if (filter == null)
+                {
+                    return context.Set<TEntity>().ToList();
+                }
+                else
+                {
+                    return context.Set<TEntity>().Where(filter).ToList();
+                }
+            }
+        }
     }
 }

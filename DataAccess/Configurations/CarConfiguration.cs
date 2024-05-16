@@ -20,9 +20,9 @@ namespace DataAccess.Configurations
                 .HasMaxLength(100);
             builder.Property(x => x.CarPrice)
                 .HasPrecision(7, 2);
-            builder.Property(x => x.Year)
+            builder.Property(x => x.CarYear)
                 .HasMaxLength(20);
-            builder.Property(x => x.PhotoUrl)
+            builder.Property(x => x.CarPhotoUrl)
                 .HasMaxLength(200);
             builder.HasIndex(x => x.CarModel)
                 .IsUnique();

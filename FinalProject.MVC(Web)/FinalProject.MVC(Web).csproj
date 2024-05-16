@@ -7,4 +7,8 @@
     <RootNamespace>FinalProject.MVC_Web_</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+  </ItemGroup>
+
 </Project>

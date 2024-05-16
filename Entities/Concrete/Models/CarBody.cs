@@ -4,7 +4,7 @@ namespace Entities.Concrete.Models
 {
     public class CarBody:BaseEntity
     {
-        public string Name { get; set; }
+        public string CarBodyName { get; set; }
         public ICollection<Car> Cars { get; set; }
     }
 }

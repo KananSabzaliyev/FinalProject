@@ -1,0 +1,75 @@
+﻿@model Car  
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarHp" class="control-label">CarHp</label>
+                <input asp-for="CarHp" class="form-control" />
+                <span asp-validation-for="CarHp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarModel" class="control-label">Car Model</label>
+                <input asp-for="CarModel" class="form-control" id="answer" />
+                <span asp-validation-for="CarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarCondition" class="control-label">CarCondition</label>
+                <input asp-for="CarCondition" class="form-control" id="answer" />
+                <span asp-validation-for="CarCondition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarPrice" class="control-label">Car Price</label>
+                <input asp-for="CarPrice" class="form-control" id="answer" />
+                <span asp-validation-for="CarPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarPhotoUrl" class="control-label">CarPhotoUrl</label>
+                <input asp-for="CarPhotoUrl" class="form-control" id="answer" />
+                <span asp-validation-for="CarPhotoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarYear" class="control-label">CarYear</label>
+                <input asp-for="CarYear" class="form-control" id="answer" />
+                <span asp-validation-for="CarYear " class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BranId" class="control-label">Brand</label>
+                <select asp-for="BranId" class="form-control">
+                    @foreach (var item in ViewData["Brands"] as IEnumerable<Brand>)
+                    {
+                        <option value="@item.Id">@item.BrandName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GearId" class="control-label">Gear</label>
+                <select asp-for="GearId" class="form-control">
+                    @foreach (var item in ViewData["Gears"] as IEnumerable<Gear>)
+                    {
+                        <option value="@item.Id">@item.GearName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarBodyId" class="control-label">CarBody</label>
+                <select asp-for="CarBodyId" class="form-control">
+                    @foreach (var item in ViewData["CarBodies"] as IEnumerable<CarBody>)
+                    {
+                        <option value="@item.Id">@item.CarBodyName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@DefaultConstantValue.ADD_MESSAGE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@DefaultConstantValue.RETURN_TO_BACK</a>
+</div>
+

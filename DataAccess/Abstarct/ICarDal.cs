@@ -5,5 +5,6 @@ namespace DataAccess.Abstarct
 {
     public interface ICarDal:IBaseRepository<Car>
     {
+        List<Car> GetCarWithDetails();
     }
 }

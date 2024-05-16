@@ -12,7 +12,7 @@ namespace DataAccess.Configurations
             builder.ToTable("Brands");
             builder.Property(x => x.Id)
                 .UseIdentityColumn(seed: DefaultConstantValue.DEFAULT_PRIMARY_KEY_INCREMENT_VALUE, increment: 1);
-            builder.Property(x => x.Name)
+            builder.Property(x => x.BrandName)
                 .HasMaxLength(50);
         }
     }
