@@ -27,4 +27,8 @@
     <None Include="Areas\Dashboard\Views\Brand\Edit.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.18" />
+  </ItemGroup>
+
 </Project>

@@ -1,3 +1,10 @@
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Abstarct;
+using DataAccess.Concrete;
+using DataAccess.SqlDbContext;
+using Entities.Membership;
+
 namespace Final_Project_MVC
 {
     public class Program
@@ -8,6 +15,22 @@ namespace Final_Project_MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<ApplicationDbContext>()
+                .AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            builder.Services.AddScoped<ICarDal, CarDal>();
+            builder.Services.AddScoped<ICarService, CarManager>();
+
+            builder.Services.AddScoped<ICarBodyDal, CarBodyDal>();
+            builder.Services.AddScoped<ICarbodyService, CarBodyManager>();
+
+            builder.Services.AddScoped<IBrandDal, BrandDal>();
+            builder.Services.AddScoped<IBrandservice, BrandManager>();
+
+            builder.Services.AddScoped<IGearDal, GearDal>();
+            builder.Services.AddScoped<IGearservice, GearManager>();
 
             var app = builder.Build();
 

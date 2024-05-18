@@ -114,6 +114,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.18, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.19, )"
             }
           },
           "imports": [

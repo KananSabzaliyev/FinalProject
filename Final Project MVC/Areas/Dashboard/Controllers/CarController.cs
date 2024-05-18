@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using Entities.Concrete.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,29 +8,36 @@ namespace Final_Project_MVC.Area.Dashboard.Controllers
     [Area("Dashboard")]
     public class CarController : Controller
     {
-        CarManager _carManager = new CarManager();
-        BrandManager _brandManager = new BrandManager();
-        CarBodyManager _carBodyManager = new CarBodyManager();
-        GearManager _gearManager = new GearManager();
+        private readonly ICarService _carService;
+        private readonly ICarbodyService _carbodyService;
+        private readonly IBrandservice _brandService;
+        private readonly IGearservice _gearService;
+        public CarController(ICarService carService,IBrandservice brandService,ICarbodyService carbodyService,IGearservice gearService)
+        {
+            _carService = carService;
+            _carbodyService = carbodyService;
+            _brandService = brandService;
+            _gearService = gearService;
+        }
         public IActionResult Index()
         {
-            var data = _carManager.GetAllWithDetails().Data;
+            var data = _carService.GetAllWithDetails().Data;
             return View(data);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            ViewData["Brands"] = _brandManager.GetAll().Data;
-            ViewData["Gears"] = _gearManager.GetAll().Data;
-            ViewData["CarBodies"] = _carBodyManager.GetAll().Data;
+            ViewData["Brands"] = _brandService.GetAll().Data;
+            ViewData["Gears"] = _gearService.GetAll().Data;
+            ViewData["CarBodies"] = _carbodyService.GetAll().Data;
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(Car car)
         {
-            var result = _carManager.Add(car);
+            var result = _carService.Add(car);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");
@@ -39,18 +47,18 @@ namespace Final_Project_MVC.Area.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewData["Brands"] = _brandManager.GetAll().Data;
+            ViewData["Brands"] = _brandService.GetAll().Data;
 
-            ViewData["Gears"] = _gearManager.GetAll().Data;
+            ViewData["Gears"] = _gearService.GetAll().Data;
 
-            ViewData["CarBodies"] = _carBodyManager.GetAll().Data;
-            var result = _carManager.GetById(id).Data;
+            ViewData["CarBodies"] = _carbodyService.GetAll().Data;
+            var result = _carService.GetById(id).Data;
             return View(result);
         }
         [HttpPost]
         public IActionResult Edit(Car car)
         {
-            var result = _carManager.Update(car);
+            var result = _carService.Update(car);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");
@@ -60,7 +68,7 @@ namespace Final_Project_MVC.Area.Dashboard.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            var result = _carManager.Delete(id);
+            var result = _carService.Delete(id);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");

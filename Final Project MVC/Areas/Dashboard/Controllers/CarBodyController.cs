@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using Entities.Concrete.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,10 +8,14 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
     [Area("Dashboard")]
     public class CarBodyController : Controller
     {
-        CarBodyManager _carBodyManager = new();
+        private readonly ICarbodyService _carbodyService;
+        public CarBodyController(ICarbodyService carbodyService)
+        {
+            _carbodyService = carbodyService;
+        }
         public IActionResult Index()
         {
-            var data = _carBodyManager.GetAll().Data;
+            var data = _carbodyService.GetAll().Data;
             return View(data);
         }
         [HttpGet]
@@ -22,7 +27,7 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
         [HttpPost]
         public IActionResult Create(CarBody carBody)
         {
-            var result = _carBodyManager.Add(carBody);
+            var result = _carbodyService.Add(carBody);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");
@@ -32,13 +37,13 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var data = _carBodyManager.GetById(id).Data;
+            var data = _carbodyService.GetById(id).Data;
             return View();
         }
         [HttpPost]
         public IActionResult Edit(CarBody carBody)
         {
-            var result = _carBodyManager.Update(carBody);
+            var result = _carbodyService.Update(carBody);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");
@@ -48,7 +53,7 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            var result = _carBodyManager.Delete(id);
+            var result = _carbodyService.Delete(id);
             if (result.IsSuccess)
             {
                 return RedirectToAction("Index");

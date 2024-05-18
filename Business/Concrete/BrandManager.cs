@@ -2,6 +2,7 @@
 using Business.BaseMessage;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
+using DataAccess.Abstarct;
 using DataAccess.Concrete;
 using Entities.Concrete.Models;
 
@@ -9,10 +10,14 @@ namespace Business.Concrete
 {
     public class BrandManager : IBrandservice
     {
-        BrandDal brandDal = new();
+        private readonly IBrandDal _branDal;
+        public BrandManager(IBrandDal brandDal)
+        {
+            _branDal = brandDal;
+        }
         public IResult Add(Brand entity)
         {
-            brandDal.Add(entity);
+            _branDal.Add(entity);
             return new SuccessResult(UIMessage.ADDED_MESSAGE);
         }
 
@@ -20,24 +25,24 @@ namespace Business.Concrete
         {
             var data = GetById(id).Data;
             data.Deleted = id;
-            brandDal.Update(data);
+            _branDal.Update(data);
             return new SuccessResult(UIMessage.DELETE_MESSAGE);
         }
 
         public IDataResult<List<Brand>> GetAll()
         {
-            return new SuccessDataResult<List<Brand>>(brandDal.GetAll(x => x.Deleted == 0));
+            return new SuccessDataResult<List<Brand>>(_branDal.GetAll(x => x.Deleted == 0));
         }
 
         public IDataResult<Brand> GetById(int id)
         {
-            return new SuccessDataResult<Brand>(brandDal.GetById(id));
+            return new SuccessDataResult<Brand>(_branDal.GetById(id));
         }
 
         public IResult Update(Brand entity)
         {
             entity.LastUpdateDate = DateTime.Now;
-            brandDal.Update(entity);
+            _branDal.Update(entity);
             return new SuccessResult(UIMessage.UPDATE_MESSAGE);
         }
     }

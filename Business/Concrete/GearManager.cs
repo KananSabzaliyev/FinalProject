@@ -2,14 +2,18 @@
 using Business.BaseMessage;
 using Core.Results.Abstract;
 using Core.Results.Concrete;
-using DataAccess.Concrete;
+using DataAccess.Abstarct;
 using Entities.Concrete.Models;
 
 namespace Business.Concrete
 {
     public class GearManager : IGearservice
     {
-        GearDal _gearDal = new();
+        private readonly IGearDal _gearDal;
+        public GearManager(IGearDal gearDal)
+        {
+            _gearDal = gearDal;
+        }
         public IResult Add(Gear entity)
         {
             _gearDal.Add(entity);
