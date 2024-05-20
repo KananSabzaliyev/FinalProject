@@ -1,12 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using Entities.Concrete.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Final_Project_MVC.Areas.Dashboard.Controllers
 {
     [Area("Dashboard")]
+    [Authorize]
     public class BrandController : Controller
     {
         private readonly IBrandservice _brandService;

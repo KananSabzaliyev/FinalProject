@@ -1,11 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using Entities.Concrete.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Final_Project_MVC.Area.Dashboard.Controllers
 {
     [Area("Dashboard")]
+    [Authorize]
     public class CarController : Controller
     {
         private readonly ICarService _carService;

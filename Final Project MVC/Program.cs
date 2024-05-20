@@ -4,6 +4,7 @@ using DataAccess.Abstarct;
 using DataAccess.Concrete;
 using DataAccess.SqlDbContext;
 using Entities.Membership;
+using Microsoft.AspNetCore.Identity;
 
 namespace Final_Project_MVC
 {
@@ -16,9 +17,22 @@ namespace Final_Project_MVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddAuthentication();
+            builder.Services.AddAuthorization();
             builder.Services.AddDbContext<ApplicationDbContext>()
                 .AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredLength = 5;
+
+                options.User.RequireUniqueEmail = true;
+            });
 
             builder.Services.AddScoped<ICarDal, CarDal>();
             builder.Services.AddScoped<ICarService, CarManager>();
@@ -46,7 +60,7 @@ namespace Final_Project_MVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

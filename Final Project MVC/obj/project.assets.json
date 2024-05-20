@@ -3020,6 +3020,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Business >= 1.0.0",
+      "Entities >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.18"
     ]
   },
@@ -3057,6 +3058,9 @@
           "projectReferences": {
             "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Business\\Business.csproj": {
               "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Business\\Business.csproj"
+            },
+            "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Kanan\\Desktop\\FinalProjectCodelandia\\Entities\\Entities.csproj"
             }
           }
         }

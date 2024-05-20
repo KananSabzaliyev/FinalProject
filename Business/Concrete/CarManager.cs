@@ -12,11 +12,11 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         private readonly ICarDal _carDal;
-        private readonly IValidator<Car> _validator;
-        public CarManager(ICarDal carDal, IValidator<Car> validator)
+       // private readonly IValidator<Car> _validator;
+        public CarManager(ICarDal carDal)// IValidator<Car> validator)
         {
             _carDal = carDal;
-            _validator = validator;
+            //_validator = validator;
         }
         public IResult Add(Car entity)
         {
