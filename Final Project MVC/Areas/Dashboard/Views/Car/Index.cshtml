@@ -1,5 +1,6 @@
-﻿@using Entities.Concrete.Models;
-@model List<Car>
+﻿@using Entities.Concrete.Dtos;
+@using Entities.Concrete.Models;
+@model List<CarDto>
 
 <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -32,19 +33,19 @@
                             <tr>
                                 <td>@item.CarHp</td>
                                 <td>@item.CarModel</td>
-                                <td>@item.CarBody.CarBodyName</td>
+                                <td>@item.CarBodyName</td>
                                 <td>@item.CarCondition</td>
                                 <td>@item.CarPrice</td>
                                 <td>@item.CarPhotoUrl</td>
                                 <td>@item.CarYear</td>                             
-                                <td>@item.Gear.GearName</td>
-                                <td>@item.Brand.BrandName</td>
+                                <td>@item.GearName</td>
+                                <td>@item.BrandName</td>
                                 
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                    <a asp-action="Edit" asp-route-id="@item.CarId">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a> |
-                                    <a item-value="@item.Id" item-title="@item.CarModel" class="btnDelete">
+                                    <a item-value="@item.CarId" item-title="@item.CarModel" class="btnDelete">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>

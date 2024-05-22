@@ -44,6 +44,11 @@ namespace Final_Project_MVC.Area.Dashboard.Controllers
             {
                 return RedirectToAction("Index");
             }
+            ViewData["Brands"] = _brandService.GetAll().Data;
+            ViewData["Gears"] = _gearService.GetAll().Data;
+            ViewData["CarBodies"] = _carbodyService.GetAll().Data;
+            ModelState.Clear();
+            ModelState.AddModelError("", result.Message);
             return View(car);
         }
         [HttpGet]

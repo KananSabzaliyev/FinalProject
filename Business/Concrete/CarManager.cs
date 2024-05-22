@@ -4,6 +4,7 @@ using Core.Results.Abstract;
 using Core.Results.Concrete;
 using DataAccess.Abstarct;
 using DataAccess.Concrete;
+using Entities.Concrete.Dtos;
 using Entities.Concrete.Models;
 using FluentValidation;
 
@@ -12,14 +13,25 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         private readonly ICarDal _carDal;
-       // private readonly IValidator<Car> _validator;
-        public CarManager(ICarDal carDal)// IValidator<Car> validator)
+        private readonly IValidator<Car> _validator;
+        public CarManager(
+            ICarDal carDal, 
+            IValidator<Car> validator
+            )
         {
             _carDal = carDal;
-            //_validator = validator;
+            _validator = validator;
         }
         public IResult Add(Car entity)
         {
+            var validation = _validator.Validate(entity);
+            if(!validation.IsValid)
+            {
+                foreach (var error in validation.Errors)
+                {
+                    return new ErrorResult(error.ErrorMessage);
+                }
+            }
             _carDal.Add(entity);
             return new SuccessResult(UIMessage.ADDED_MESSAGE);
         }
@@ -37,9 +49,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(x=>x.Deleted==0));
         }
 
-        public IDataResult<List<Car>> GetAllWithDetails()
+        public IDataResult<List<CarDto>> GetAllWithDetails()
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetCarWithDetails());
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarWithDetails());
         }
 
         public IDataResult<Car> GetById(int id)

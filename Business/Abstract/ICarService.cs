@@ -1,4 +1,5 @@
 ﻿using Core.Results.Abstract;
+using Entities.Concrete.Dtos;
 using Entities.Concrete.Models;
 
 namespace Business.Abstract
@@ -9,7 +10,7 @@ namespace Business.Abstract
         IResult Update(Car entity);
         IResult Delete(int id);
         IDataResult<List<Car>> GetAll();
-        IDataResult<List<Car>> GetAllWithDetails();
+        IDataResult<List<CarDto>> GetAllWithDetails();
         IDataResult<Car> GetById(int id);
     }
 }

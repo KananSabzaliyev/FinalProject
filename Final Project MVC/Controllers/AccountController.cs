@@ -21,8 +21,8 @@ namespace Final_Project_MVC.Controllers
         {
             return View();
         }
-        [AllowAnonymous]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginDto dto)
         {
             if (ModelState.IsValid)
@@ -47,15 +47,15 @@ namespace Final_Project_MVC.Controllers
             return View();
             
         }
-        [AllowAnonymous]
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
-        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult>  Register(RegisterDto dto)
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(RegisterDto dto)
         {
             if (ModelState.IsValid)
             {

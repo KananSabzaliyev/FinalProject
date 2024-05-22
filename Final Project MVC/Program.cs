@@ -1,9 +1,12 @@
 using Business.Abstract;
 using Business.Concrete;
+using Business.Validations;
 using DataAccess.Abstarct;
 using DataAccess.Concrete;
 using DataAccess.SqlDbContext;
+using Entities.Concrete.Models;
 using Entities.Membership;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 
 namespace Final_Project_MVC
@@ -36,6 +39,7 @@ namespace Final_Project_MVC
 
             builder.Services.AddScoped<ICarDal, CarDal>();
             builder.Services.AddScoped<ICarService, CarManager>();
+            builder.Services.AddScoped<IValidator<Car>, CarValidation>();
 
             builder.Services.AddScoped<ICarBodyDal, CarBodyDal>();
             builder.Services.AddScoped<ICarbodyService, CarBodyManager>();
