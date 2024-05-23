@@ -40,7 +40,7 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
         public IActionResult Edit(int id)
         {
             var data = _carbodyService.GetById(id).Data;
-            return View();
+            return View(data);
         }
         [HttpPost]
         public IActionResult Edit(CarBody carBody)

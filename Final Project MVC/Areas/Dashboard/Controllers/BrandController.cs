@@ -1,9 +1,7 @@
 ﻿using Business.Abstract;
-using Business.Concrete;
 using Entities.Concrete.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Final_Project_MVC.Areas.Dashboard.Controllers
 {
@@ -37,11 +35,12 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
             }
             return View(brand);
         }
+
         [HttpGet]
         public IActionResult Edit(int id)
         {
             var data = _brandService.GetById(id).Data;
-            return View();
+            return View(data);
         }
         [HttpPost]
         public IActionResult Edit(Brand brand)

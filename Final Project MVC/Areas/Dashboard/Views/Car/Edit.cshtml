@@ -6,37 +6,37 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CarHp" class="control-label">CarHp</label>
+                <label asp-for="CarHp" class="control-label">At gücü</label>
                 <input asp-for="CarHp" class="form-control" />
                 <span asp-validation-for="CarHp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarModel" class="control-label">Car Model</label>
+                <label asp-for="CarModel" class="control-label">Model</label>
                 <input asp-for="CarModel" class="form-control" id="answer" />
                 <span asp-validation-for="CarModel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarCondition" class="control-label">CarCondition</label>
+                <label asp-for="CarCondition" class="control-label">Vəziyyəti</label>
                 <input asp-for="CarCondition" class="form-control" id="answer" />
                 <span asp-validation-for="CarCondition" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarPrice" class="control-label">Car Price</label>
+                <label asp-for="CarPrice" class="control-label">Qiyməti</label>
                 <input asp-for="CarPrice" class="form-control" id="answer" />
                 <span asp-validation-for="CarPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarPhotoUrl" class="control-label">CarPhotoUrl</label>
+                <label asp-for="CarPhotoUrl" class="control-label">Şəkil</label>
                 <input asp-for="CarPhotoUrl" class="form-control" id="answer" />
                 <span asp-validation-for="CarPhotoUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarYear" class="control-label">CarYear</label>
+                <label asp-for="CarYear" class="control-label">İli</label>
                 <input asp-for="CarYear" class="form-control" id="answer" />
                 <span asp-validation-for="CarYear " class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BranId" class="control-label">Brand</label>
+                <label asp-for="BranId" class="control-label">Brend</label>
                 <select asp-for="BranId" class="form-control">
                     @foreach (var item in ViewData["Brands"] as IEnumerable<Brand>)
                     {
@@ -45,7 +45,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="GearId" class="control-label">Gear</label>
+                <label asp-for="GearId" class="control-label">Ötürücü</label>
                 <select asp-for="GearId" class="form-control">
                     @foreach (var item in ViewData["Gears"] as IEnumerable<Gear>)
                     {
@@ -54,7 +54,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="CarBodyId" class="control-label">CarBody</label>
+                <label asp-for="CarBodyId" class="control-label">Kuza</label>
                 <select asp-for="CarBodyId" class="form-control">
                     @foreach (var item in ViewData["CarBodies"] as IEnumerable<CarBody>)
                     {

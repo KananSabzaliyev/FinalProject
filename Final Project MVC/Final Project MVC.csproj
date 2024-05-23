@@ -8,24 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Dashboard\Views\Brand\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Areas\Dashboard\Views\Brand\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Areas\Dashboard\Views\Brand\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Areas\Dashboard\Views\Brand\Edit.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

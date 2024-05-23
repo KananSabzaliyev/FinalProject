@@ -26,12 +26,10 @@ namespace DataAccess.Concrete
                          on car.BranId equals brand.Id
                          where brand.Deleted == 0
 
-                         where car.Deleted == 0
                          join carbody in _context.CarBodies
                          on car.CarBodyId equals carbody.Id
                          where carbody.Deleted == 0
 
-                         where car.Deleted == 0
                          join gear in _context.Gears
                          on car.GearId equals gear.Id
                          where gear.Deleted == 0

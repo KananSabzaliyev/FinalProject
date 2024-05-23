@@ -22,6 +22,7 @@ namespace DataAccess.SqlDbContext
         public DbSet<CarBody> CarBodies { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Gear> Gears { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Service> Services { get; set; }
     }
 }

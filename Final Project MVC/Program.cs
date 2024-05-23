@@ -46,9 +46,15 @@ namespace Final_Project_MVC
 
             builder.Services.AddScoped<IBrandDal, BrandDal>();
             builder.Services.AddScoped<IBrandservice, BrandManager>();
+            
+            builder.Services.AddScoped<IContactDal, ContactDal>();
+            builder.Services.AddScoped<IContactService, ContactManager>();
 
             builder.Services.AddScoped<IGearDal, GearDal>();
             builder.Services.AddScoped<IGearservice, GearManager>();
+
+            builder.Services.AddScoped<IServiceDal, ServiceDal>();
+            builder.Services.AddScoped<IServiceservice, ServiceManager>();
 
             var app = builder.Build();
 

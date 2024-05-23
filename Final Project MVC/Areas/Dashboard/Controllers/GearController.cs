@@ -39,7 +39,7 @@ namespace Final_Project_MVC.Areas.Dashboard.Controllers
         public IActionResult Edit(int id)
         {
             var data = _gearService.GetById(id).Data;
-            return View();
+            return View(data);
         }
         [HttpPost]
         public IActionResult Edit(Gear gear)
